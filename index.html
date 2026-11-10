@@ -1,113 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Weekly Goals</title>
-
-  <!-- PWA & Mobile Web App Meta -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Weekly Goals" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="theme-color" content="#090d16" />
-
-  <!-- Self-Contained App Icon (忍耐 - Perseverance) Embedded via SVG Data URI -->
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23161f30'/%3E%3Cstop offset='50%25' stop-color='%230b101d'/%3E%3Cstop offset='100%25' stop-color='%2305070c'/%3E%3C/linearGradient%3E%3Cfilter id='glow' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='10' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23bg)'/%3E%3Crect width='496' height='496' x='8' y='8' rx='107' fill='none' stroke='%2310b981' stroke-width='4' stroke-opacity='0.25'/%3E%3Ctext x='50%25' y='57%25' text-anchor='middle' dominant-baseline='middle' font-family='-apple-system, BlinkMacSystemFont, %22Hiragino Sans%22, %22Noto Sans CJK JP%22, %22Yu Gothic%22, %22Microsoft YaHei%22, sans-serif' font-weight='900' font-size='200' fill='%2310b981' filter='url(%23glow)' letter-spacing='4'%3E%E5%BF%8D%E8%80%90%3C/text%3E%3C/svg%3E" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BE A BETTER</title>
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23161f30'/%3E%3Cstop offset='50%25' stop-color='%230b101d'/%3E%3Cstop offset='100%25' stop-color='%2305070c'/%3E%3C/linearGradient%3E%3Cfilter id='glow' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='10' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23bg)'/%3E%3Crect width='496' height='496' x='8' y='8' rx='107' fill='none' stroke='%2310b981' stroke-width='4' stroke-opacity='0.25'/%3E%3Ctext x='50%25' y='57%25' text-anchor='middle' dominant-baseline='middle' font-family='-apple-system, BlinkMacSystemFont, %22Hiragino Sans%22, %22Noto Sans CJK JP%22, %22Yu Gothic%22, %22Microsoft YaHei%22, sans-serif' font-weight='900' font-size='200' fill='%2310b981' filter='url(%23glow)' letter-spacing='4'%3E%E5%BF%8D%E8%80%90%3C/text%3E%3C/svg%3E" />
+  <!-- Standalone Web App Meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="BE BETTER">
+  <meta name="application-name" content="BE BETTER">
+  <meta name="theme-color" content="#0c0e12">
 
-  <!-- Embedded Web App Manifest for Standalone Native Feel -->
-  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Weekly%20Goals%22%2C%22short_name%22%3A%22Weekly%20Goals%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23090d16%22%2C%22theme_color%22%3A%22%23090d16%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20512%20512'%253E%253Crect%20width%3D'512'%20height%3D'512'%20rx%3D'115'%20fill%3D'%230b101d'%2F%253E%253Ctext%20x%3D'50%2525'%20y%3D'57%2525'%20text-anchor%3D'middle'%20dominant-baseline%3D'middle'%20font-size%3D'200'%20fill%3D'%2310b981'%253E%25E5%25BF%258D%25E8%2580%2590%253C%2Ftext%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D" />
+  <!-- Dynamic PNG Elements for Phone Home Screen Badges -->
+  <link id="dynamicFavicon" rel="icon" type="image/png">
+  <link id="dynamicAppleIcon" rel="apple-touch-icon">
+  <link id="dynamicManifest" rel="manifest">
+
+  <script>
+    (function generateAppIcon() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 512;
+      canvas.height = 512;
+      const ctx = canvas.getContext('2d');
+
+      const r = 110;
+      ctx.beginPath();
+      ctx.moveTo(r, 0);
+      ctx.lineTo(512 - r, 0);
+      ctx.quadraticCurveTo(512, 0, 512, r);
+      ctx.lineTo(512, 512 - r);
+      ctx.quadraticCurveTo(512, 512, 512 - r, 512);
+      ctx.lineTo(r, 512);
+      ctx.quadraticCurveTo(0, 512, 0, 512 - r);
+      ctx.lineTo(0, r);
+      ctx.quadraticCurveTo(0, 0, r, 0);
+      ctx.closePath();
+      ctx.fillStyle = '#11151d';
+      ctx.fill();
+
+      ctx.lineWidth = 18;
+      ctx.strokeStyle = '#22c55e';
+      ctx.stroke();
+
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = 'rgba(34, 197, 94, 0.12)';
+      [128, 256, 384].forEach(pos => {
+        ctx.beginPath();
+        ctx.moveTo(pos, 30);
+        ctx.lineTo(pos, 482);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(30, pos);
+        ctx.lineTo(482, pos);
+        ctx.stroke();
+      });
+
+      ctx.fillStyle = '#22c55e';
+      ctx.font = '900 150px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('BE', 256, 210);
+
+      ctx.fillStyle = '#f1f5f9';
+      ctx.font = '900 96px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      ctx.fillText('BETTER', 256, 350);
+
+      const pngData = canvas.toDataURL('image/png');
+      document.getElementById('dynamicFavicon').href = pngData;
+      document.getElementById('dynamicAppleIcon').href = pngData;
+
+      const manifest = {
+        name: "BE BETTER",
+        short_name: "BE BETTER",
+        start_url: "./index.html",
+        display: "standalone",
+        background_color: "#0c0e12",
+        theme_color: "#0c0e12",
+        icons: [{ src: pngData, sizes: "512x512", type: "image/png", purpose: "any maskable" }]
+      };
+      const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+      document.getElementById('dynamicManifest').href = URL.createObjectURL(manifestBlob);
+    })();
+  </script>
 
   <style>
     :root {
-      --accent: #10b981;
-      --accent-glow: rgba(16, 185, 129, 0.25);
-      --accent-muted: rgba(16, 185, 129, 0.12);
-      --accent-contrast: #022c22;
-      --bg-page: #090d16;
-      --bg-card: #111724;
-      --bg-card-sub: #161f31;
-      --bg-input: #0a0f1d;
-      --border: #1e293b;
-      --border-light: #334155;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --radius: 14px;
+      --accent: #22c55e;
+      --accent-glow: rgba(34, 197, 94, 0.2);
+      --accent-subtle: rgba(34, 197, 94, 0.1);
+      --bonus-gold: #f59e0b;
+      --bonus-glow: rgba(245, 158, 11, 0.2);
+      --bg: #0c0e12;
+      --surface: #13171f;
+      --surface-hover: #181d27;
+      --border: #242b3b;
+      --border-strong: #333d52;
+      --text: #f1f5f9;
+      --text-muted: #8e9bb0;
+      --text-dim: #546075;
+      --danger: #ef4444;
+      --radius: 10px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      text-transform: uppercase !important;
       -webkit-tap-highlight-color: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
+      background-color: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 16px 12px 64px 12px;
-      line-height: 1.5;
+      padding-bottom: 70px;
+      overflow-x: hidden;
     }
 
     .container {
       width: 100%;
-      max-width: 880px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      max-width: 680px;
+      padding: 16px 14px;
     }
 
-    /* Header Nav */
     header {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-      position: relative;
+      padding: 12px 0 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
     }
 
-    .app-brand {
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
+      cursor: pointer;
     }
 
-    /* Kanji Avatar */
-    .app-brand-kanji {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: #0f1626;
-      border: 1px solid var(--border-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .badge-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px var(--accent-glow));
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
       font-weight: 900;
-      font-size: 0.9rem;
-      color: var(--accent);
-      box-shadow: 0 0 10px var(--accent-glow);
-      user-select: none;
-      letter-spacing: -1px;
+      letter-spacing: 1.5px;
+      color: var(--text);
+      line-height: 1.1;
     }
 
-    .app-title {
-      font-size: 1.05rem;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--text-main);
+    .brand-subtitle {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 1px;
     }
 
     .header-actions {
@@ -116,2003 +173,1489 @@
       gap: 8px;
     }
 
-    /* Settings Cog Button */
-    .settings-btn {
-      background: var(--bg-card-sub);
-      border: 1px solid var(--border-light);
+    .btn-icon {
+      background: var(--surface);
+      border: 1px solid var(--border);
       color: var(--text-muted);
       width: 38px;
       height: 38px;
-      border-radius: 10px;
+      border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
-    .settings-btn:hover {
-      color: #ffffff;
+    .btn-icon:hover {
+      background: var(--surface-hover);
       border-color: var(--accent);
-      background: var(--border);
+      color: var(--text);
     }
 
-    .cog-icon {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    /* Week Navigation */
-    .week-nav {
-      background: var(--bg-card);
+    .week-toolbar {
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 10px 14px;
+      padding: 8px 12px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
       gap: 8px;
     }
 
     .week-nav-btn {
-      background: var(--bg-card-sub);
-      color: var(--text-main);
-      border: 1px solid var(--border-light);
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 600;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 10px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 6px;
       cursor: pointer;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 4px;
-      transition: background 0.15s ease;
+      transition: all 0.15s;
+      white-space: nowrap;
     }
 
     .week-nav-btn:hover {
-      background: var(--border);
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      color: var(--text);
     }
 
-    .week-label {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--text-main);
-      letter-spacing: 0.5px;
-      text-align: center;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    /* Hero Score HUD */
-    .score-hud {
-      background: linear-gradient(135deg, var(--bg-card) 0%, #0d121c 100%);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    @media (min-width: 600px) {
-      .score-hud {
-        grid-template-columns: 1.1fr 1fr;
-        align-items: center;
-      }
-    }
-
-    .hud-left {
+    .week-details {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      text-align: center;
+      flex-grow: 1;
     }
 
-    .hud-title-tag {
-      font-size: 0.72rem;
+    .week-range {
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      color: var(--text);
+    }
+
+    .week-status-badge {
+      font-size: 0.6rem;
       font-weight: 800;
-      letter-spacing: 1.5px;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      margin-top: 2px;
     }
 
-    .hud-grade-row {
+    .jump-btn {
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+
+    /* 7-DAY NAVIGATION TABS */
+    .day-tabs {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+
+    .tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 1px;
+      border-radius: var(--radius);
+      font-size: 0.7rem;
+      font-weight: 800;
+      cursor: pointer;
       display: flex;
-      align-items: baseline;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn .tab-count {
+      font-size: 0.6rem;
+      font-weight: 900;
+      opacity: 0.75;
+    }
+
+    .tab-btn.weekend-tab {
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .tab-btn.weekend-tab .tab-count {
+      color: var(--bonus-gold);
+    }
+
+    .tab-btn.active {
+      background: var(--surface-hover);
+      border-color: var(--accent);
+      color: var(--text);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .tab-btn.weekend-tab.active {
+      border-color: var(--bonus-gold);
+      box-shadow: 0 0 10px var(--bonus-glow);
+    }
+
+    .tab-btn.today::after {
+      content: "•";
+      color: var(--accent);
+      font-size: 0.9rem;
+      line-height: 0;
+      margin-top: 3px;
+    }
+
+    .progress-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
     }
 
-    .hud-grade-num {
-      font-size: 4rem;
-      line-height: 1;
-      font-weight: 900;
-      color: #ffffff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      letter-spacing: -1px;
-    }
-
-    .hud-grade-denom {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text-dim);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .hud-pts-badge {
-      display: inline-flex;
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
     }
 
-    .hud-right {
+    .progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: var(--bg);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    .progress-bar-fill.bonus-fill {
+      background: var(--bonus-gold);
+      box-shadow: 0 0 8px var(--bonus-glow);
+    }
+
+    /* BONUS BANNER FOR SAT/SUN */
+    .bonus-banner {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px dashed var(--bonus-gold);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .bonus-banner-text {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--bonus-gold);
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+    }
+
+    .bonus-tag {
+      font-size: 0.6rem;
+      font-weight: 900;
+      background: var(--bonus-gold);
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin: 16px 0 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .section-badge.gold {
+      color: var(--bonus-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border-color: var(--bonus-gold);
+    }
+
+    .chore-list {
       display: flex;
       flex-direction: column;
+      gap: 7px;
+    }
+
+    .chore-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+
+    .chore-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+    }
+
+    .chore-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
+    .checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--border-strong);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+
+    .chore-card.done .checkbox {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000;
+    }
+
+    .chore-card.done.bonus-done .checkbox {
+      background: var(--bonus-gold);
+      border-color: var(--bonus-gold);
+      color: #000;
+    }
+
+    .chore-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      line-height: 1.25;
+      color: var(--text);
+    }
+
+    .chore-card.done .chore-title {
+      color: var(--text-dim);
+      text-decoration: line-through;
+    }
+
+    .chore-tag {
+      font-size: 0.6rem;
+      font-weight: 900;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .chore-card.done .chore-tag {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-subtle);
+    }
+
+    .chore-card.done.bonus-done .chore-tag {
+      color: var(--bonus-gold);
+      border-color: var(--bonus-gold);
+      background: rgba(245, 158, 11, 0.12);
+    }
+
+    .footer-actions {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
 
-    .pillar-mini-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-    }
-
-    .pillar-mini-card {
-      background: var(--bg-card-sub);
+    .action-btn {
+      background: var(--surface);
       border: 1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .pm-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-    }
-
-    .pm-val {
-      font-size: 1.1rem;
+      color: var(--text);
+      font-size: 0.74rem;
       font-weight: 800;
-      color: #ffffff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .pm-denom {
-      font-size: 0.72rem;
-      color: var(--text-dim);
-    }
-
-    .share-btn-wrap {
-      margin-top: 6px;
-    }
-
-    .share-action-btn {
-      width: 100%;
-      background: var(--accent);
-      color: var(--accent-contrast);
-      font-weight: 800;
-      font-size: 0.88rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding: 12px 16px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 18px var(--accent-glow);
-      transition: transform 0.15s ease, filter 0.15s ease;
-    }
-
-    .share-action-btn:hover {
-      filter: brightness(1.1);
-    }
-
-    .share-action-btn:active {
-      transform: scale(0.98);
-    }
-
-    /* Day Cards List */
-    .days-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .day-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      padding: 12px;
       border-radius: var(--radius);
-      padding: 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: border-color 0.15s ease;
-    }
-
-    .day-card.today {
-      border-color: var(--accent);
-      box-shadow: 0 0 15px var(--accent-muted);
-    }
-
-    .day-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .day-name-box {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .day-name {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.5px;
-    }
-
-    .day-date {
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .day-pts-sum {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-muted);
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .items-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    @media (min-width: 680px) {
-      .items-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .tracker-item {
-      background: var(--bg-card-sub);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 8px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .tracker-label-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .tracker-name {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .tracker-sub {
-      font-size: 0.68rem;
-      color: var(--text-dim);
-    }
-
-    /* Stepper (- / +) */
-    .stepper {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .stepper-btn {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 700;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      user-select: none;
-      transition: background 0.1s ease, border-color 0.1s ease;
-    }
-
-    .stepper-btn:hover {
-      background: var(--border);
-      border-color: var(--text-muted);
-    }
-
-    .stepper-btn:active {
-      transform: scale(0.92);
-    }
-
-    .stepper-val {
-      min-width: 22px;
-      text-align: center;
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #ffffff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .stepper-val.active-val {
-      color: var(--accent);
-    }
-
-    /* Calorie Toggle Switch */
-    .cal-toggle-wrap {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
       gap: 8px;
-      user-select: none;
+      transition: all 0.15s;
     }
 
-    .cal-checkbox {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .toggle-track {
-      width: 44px;
-      height: 24px;
-      background: #1e293b;
-      border-radius: 12px;
-      position: relative;
-      transition: background 0.2s ease;
-      border: 1px solid var(--border-light);
-    }
-
-    .toggle-thumb {
-      width: 18px;
-      height: 18px;
-      background: #ffffff;
-      border-radius: 50%;
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .cal-checkbox:checked + .toggle-track {
-      background: var(--accent);
+    .action-btn:hover {
+      background: var(--surface-hover);
       border-color: var(--accent);
     }
 
-    .cal-checkbox:checked + .toggle-track .toggle-thumb {
-      transform: translateX(20px);
-      background: var(--accent-contrast);
-    }
-
-    /* Day Notes */
-    .day-notes-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .notes-textarea {
-      width: 100%;
-      background: var(--bg-input);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 10px;
-      color: var(--text-main);
-      font-size: 0.8rem;
-      font-family: inherit;
-      resize: vertical;
-      min-height: 48px;
-      outline: none;
-      transition: border-color 0.15s ease;
-    }
-
-    .notes-textarea:focus {
-      border-color: var(--accent);
-    }
-
-    .notes-textarea::placeholder {
-      color: #475569;
-    }
-
-    /* Modal Structure */
     .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      inset: 0;
       background: rgba(0, 0, 0, 0.88);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(5px);
       display: none;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
-      padding: 16px;
+      z-index: 100;
+      padding: 14px;
     }
 
     .modal-overlay.open {
       display: flex;
     }
 
-    .modal-box {
-      background: #0d121d;
-      border: 1px solid var(--border-light);
-      border-radius: 18px;
-      max-width: 500px;
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
       width: 100%;
-      max-height: 94vh;
+      max-width: 500px;
+      max-height: 90vh;
       overflow-y: auto;
+      padding: 18px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
 
-    .modal-header {
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--border);
+    .modal-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
     }
 
     .modal-title {
       font-size: 0.95rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-weight: 900;
+      letter-spacing: 1px;
     }
 
-    .modal-close {
+    .close-btn {
       background: transparent;
       border: none;
       color: var(--text-muted);
-      font-size: 1.5rem;
-      line-height: 1;
+      font-size: 1.2rem;
       cursor: pointer;
-      padding: 4px;
+      font-weight: 900;
     }
 
-    .modal-close:hover {
-      color: #ffffff;
-    }
-
-    .modal-body {
+    /* REPORT CARD COMPONENT */
+    .report-card-container {
+      background: linear-gradient(180deg, #13171f 0%, #0c0e12 100%);
+      border: 2px solid var(--border-strong);
+      border-radius: 12px;
       padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
-    /* Settings Sections */
-    .settings-section {
-      background: var(--bg-card-sub);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .section-title {
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-dim);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .theme-picker-row {
+    .rc-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
     }
 
-    .theme-dot {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-
-    .theme-dot:hover {
-      transform: scale(1.15);
-    }
-
-    .theme-dot.active {
-      border-color: #ffffff;
-      transform: scale(1.15);
-      box-shadow: 0 0 10px currentColor;
-    }
-
-    .storage-status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #34d399;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .vault-btn-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .vault-btn {
-      background: #0f1626;
-      border: 1px solid var(--border-light);
-      color: var(--text-main);
-      padding: 8px 10px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      cursor: pointer;
+    .rc-title-block {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.15s ease;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .vault-btn:hover {
-      border-color: var(--accent);
-      background: var(--border);
+    .rc-title {
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--text);
     }
 
-    .sync-box-textarea {
-      width: 100%;
-      height: 64px;
-      background: var(--bg-input);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px;
-      color: var(--text-main);
-      font-size: 0.72rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      resize: vertical;
-      outline: none;
-    }
-
-    .sync-box-textarea:focus {
-      border-color: var(--accent);
-    }
-
-    /* Scorecard Preview (1080 x 1920) */
-    .preview-img-container {
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
-      background: #000;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #scorecard-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      user-select: none;
-      -webkit-user-select: none;
-      -webkit-touch-callout: default;
-    }
-
-    .modal-tip {
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      text-align: center;
-      line-height: 1.4;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .modal-tip b {
+    .rc-sub {
+      font-size: 0.64rem;
+      font-weight: 800;
       color: var(--text-muted);
     }
 
-    .modal-actions {
+    .rc-score-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .rc-pct {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .rc-grade {
+      font-size: 0.62rem;
+      font-weight: 900;
+      color: #000;
+      background: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
+    .rc-highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .rc-stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .rc-stat-num {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .rc-stat-label {
+      font-size: 0.58rem;
+      font-weight: 800;
+      color: var(--text-dim);
+    }
+
+    .rc-stat-box.bonus-box {
+      border-color: rgba(245, 158, 11, 0.4);
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    .rc-stat-box.bonus-box .rc-stat-num {
+      color: var(--bonus-gold);
+    }
+
+    /* DAY-BY-DAY AUDIT TABLE */
+    .rc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.72rem;
+    }
+
+    .rc-table th {
+      text-align: left;
+      padding: 8px 6px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.62rem;
+      font-weight: 900;
+    }
+
+    .rc-table td {
+      padding: 8px 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-weight: 800;
+    }
+
+    .rc-table tr.weekend-row td {
+      color: var(--bonus-gold);
+    }
+
+    .status-pill {
+      font-size: 0.58rem;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .status-pill.done {
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .status-pill.bonus {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--bonus-gold);
+      border: 1px solid var(--bonus-gold);
+    }
+
+    .status-pill.empty {
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .color-chip {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 8px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s;
+    }
+
+    .color-chip:hover, .color-chip.active {
+      border-color: var(--accent);
+      background: var(--surface-hover);
+    }
+
+    .color-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .color-label {
+      font-size: 0.65rem;
+      font-weight: 900;
+    }
+
+    .add-chore-box {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
+      background: var(--bg);
+      padding: 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
     }
 
-    .modal-btn-row {
+    .input-text {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      outline: none;
+    }
+
+    .input-text:focus {
+      border-color: var(--accent);
+    }
+
+    .type-select-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
 
-    .btn-primary-action {
-      background: var(--accent);
-      color: var(--accent-contrast);
-      font-weight: 800;
-      font-size: 0.85rem;
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 14px var(--accent-glow);
-    }
-
-    .btn-secondary-action {
-      background: var(--bg-card-sub);
-      color: var(--text-main);
-      border: 1px solid var(--border-light);
-      font-weight: 700;
-      font-size: 0.82rem;
-      padding: 10px 12px;
-      border-radius: 8px;
-      cursor: pointer;
+    .type-radio-label {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px;
       text-align: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
     }
 
-    .btn-secondary-action:hover {
-      background: var(--border);
+    .type-radio-label.selected {
+      border-color: var(--accent);
+      background: var(--accent-subtle);
+      color: var(--accent);
     }
 
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%) translateY(80px);
-      background: #0f172a;
-      border: 1px solid var(--accent);
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      opacity: 0;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-      pointer-events: none;
-      z-index: 10000;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    .btn-submit {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      cursor: pointer;
     }
 
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
+    .manage-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .manage-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      border-radius: 6px;
+      gap: 8px;
+    }
+
+    .manage-item-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .btn-del {
+      background: transparent;
+      border: none;
+      color: var(--danger);
+      font-weight: 900;
+      cursor: pointer;
+      padding: 4px;
+      font-size: 0.8rem;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Header -->
     <header>
-      <div class="app-brand">
-        <!-- Kanji Avatar (忍耐 - Perseverance) -->
-        <div class="app-brand-kanji" title="忍耐 (Perseverance)">忍耐</div>
-        <div class="app-title">Weekly Goals</div>
+      <div class="brand" onclick="jumpToCurrentWeek()">
+        <svg id="headerEmblem" class="badge-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1f2737"/>
+              <stop offset="100%" stop-color="#0d1117"/>
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="28" fill="url(#badgeGrad)" stroke="var(--accent)" stroke-width="4"/>
+          <path d="M10 30h100M10 60h100M10 90h100M30 10v100M60 10v100M90 10v100" stroke="var(--accent)" stroke-opacity="0.12" stroke-width="1.2"/>
+          <text x="60" y="52" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="900" font-size="34" fill="var(--accent)" text-anchor="middle" letter-spacing="2">BE</text>
+          <text x="60" y="86" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="900" font-size="22" fill="#f1f5f9" text-anchor="middle" letter-spacing="3">BETTER</text>
+        </svg>
+        <div>
+          <h1 class="brand-title">BE A BETTER</h1>
+          <div class="brand-subtitle">FATHERHOOD & MARRIAGE STEWARDSHIP</div>
+        </div>
       </div>
       <div class="header-actions">
-        <!-- Settings Cog Button -->
-        <button class="settings-btn" onclick="openSettingsModal()" title="Settings & Data Vault" aria-label="Settings">
-          <svg class="cog-icon" viewBox="0 0 24 24">
-            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+        <button class="btn-icon" onclick="openModal('colorModal')" title="COLOR PALETTE">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"></path>
+          </svg>
+        </button>
+        <button class="btn-icon" onclick="openModal('choreModal')" title="MANAGE CHORES">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
           </svg>
         </button>
       </div>
     </header>
 
-    <!-- Week Navigator -->
-    <div class="week-nav">
-      <button class="week-nav-btn" onclick="shiftWeek(-1)">← Prev</button>
-      <div class="week-label" id="week-display-label">Loading week...</div>
-      <div style="display: flex; gap: 6px;">
-        <button class="week-nav-btn" onclick="jumpToCurrentWeek()">This Week</button>
-        <button class="week-nav-btn" onclick="shiftWeek(1)">Next →</button>
+    <!-- WEEK NAVIGATION TOOLBAR -->
+    <div class="week-toolbar">
+      <button class="week-nav-btn" onclick="shiftWeek(-1)">◀ PREV WEEK</button>
+      <div class="week-details">
+        <div class="week-range" id="weekRangeLabel">WEEK OF OCT 26 - NOV 1</div>
+        <div class="week-status-badge" id="weekStatusBadge">CURRENT WEEK</div>
+        <button class="jump-btn" id="jumpCurrentBtn" style="display:none;" onclick="jumpToCurrentWeek()">JUMP TO THIS WEEK</button>
+      </div>
+      <button class="week-nav-btn" onclick="shiftWeek(1)">NEXT WEEK ▶</button>
+    </div>
+
+    <!-- 7-DAY NAVIGATION TABS (MON-SUN) -->
+    <div class="day-tabs" id="dayTabsContainer"></div>
+
+    <!-- PROGRESS CARD -->
+    <div class="progress-card">
+      <div class="progress-meta">
+        <span id="activeDayLabel">MONDAY EXECUTION</span>
+        <span id="activeProgressStats">0 / 0 COMPLETED (0%)</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
       </div>
     </div>
 
-    <!-- Hero Score HUD -->
-        <div class="score-hud">
-      <div class="hud-left">
-        <div class="hud-title-tag">Weekly Discipline Grade</div>
-        <div class="hud-grade-row">
-          <span class="hud-grade-num" id="hud-grade-val">0.0</span>
-          <span class="hud-grade-denom">/ 10.0</span>
-        </div>
-        <div class="hud-pts-badge" id="hud-pts-val">0 / 18 PTS</div>
+    <!-- BONUS NOTIFICATION (SHOWN ONLY ON SAT / SUN) -->
+    <div id="bonusBanner" class="bonus-banner" style="display: none;">
+      <div class="bonus-banner-text">
+        WEEKEND EXTRA CREDIT ACTIVE: CHORES LOGGED HERE EARN BONUS POINTS AND DO NOT PENALIZE YOUR MAIN STORE.
       </div>
-      <div class="hud-right">
-        <div class="pillar-mini-row" id="hud-pillars-container">
-          <!-- Dynamically populated based on configured goals -->
-        </div>
-        <div class="share-btn-wrap">
-          <button class="share-action-btn" onclick="openScorecardModal()">
-            <span>⚡ Share Scorecard (9:16)</span>
-          </button>
-        </div>
-      </div>
+      <span class="bonus-tag">+BONUS</span>
     </div>
 
-    <!-- Days Container -->
-    <div class="days-list" id="days-container">
-      <!-- Injected via JavaScript -->
+    <!-- CHORES CONTAINER -->
+    <div id="contentArea">
+      <!-- DAILY CHORES -->
+      <div class="section-title">
+        <span id="dailySectionTitle">DAILY DISCIPLINES</span>
+        <span class="section-badge" id="dailySectionBadge">RESETS EVERY DAY</span>
+      </div>
+      <div class="chore-list" id="dailyList"></div>
+
+      <!-- WEEKLY MASTER CHORES -->
+      <div class="section-title" id="weeklySectionHeader">
+        <span>WEEKLY MASTER CHORES</span>
+        <span class="section-badge">STAYS DONE ALL WEEK</span>
+      </div>
+      <div class="chore-list" id="weeklyList"></div>
     </div>
-  </div>
 
-  <!-- Settings & Data Vault Modal -->
-  <div class="modal-overlay" id="settings-modal" onclick="onModalOverlayClick(event, 'settings-modal')">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <div class="modal-title">Settings &amp; Goal Customizer</div>
-        <button class="modal-close" onclick="closeSettingsModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <!-- Goal Customization Section -->
-        <div class="settings-section">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div class="section-title">Custom Goals &amp; Weekly Targets</div>
-            <button class="vault-btn" style="padding:4px 8px; font-size:0.7rem;" onclick="addNewGoalPrompt()">+ Add Goal</button>
-          </div>
-          <div id="goals-customizer-list" style="display:flex; flex-direction:column; gap:8px;">
-            <!-- Rendered dynamically -->
-          </div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">
-            <span style="font-size:0.75rem; color:var(--text-dim); font-family:ui-monospace, monospace;">Total Weekly Baseline: <b id="custom-baseline-sum" style="color:var(--accent);">18</b> pts</span>
-            <button class="vault-btn" style="padding:4px 8px; font-size:0.7rem; color:#ef4444;" onclick="resetGoalsToDefault()">Reset Defaults</button>
-          </div>
-        </div>
-
-        <!-- Accent Theme -->
-        <div class="settings-section">
-          <div class="section-title">Color Palette</div>
-          <div class="theme-picker-row">
-            <div class="theme-dot" data-theme="emerald" style="background:#10b981;" title="Tactical Green" onclick="setTheme('emerald')"></div>
-            <div class="theme-dot" data-theme="sky" style="background:#38bdf8;" title="Electric Sky" onclick="setTheme('sky')"></div>
-            <div class="theme-dot" data-theme="amber" style="background:#f59e0b;" title="Amber Gold" onclick="setTheme('amber')"></div>
-            <div class="theme-dot" data-theme="crimson" style="background:#f43f5e;" title="Crimson Red" onclick="setTheme('crimson')"></div>
-            <div class="theme-dot" data-theme="purple" style="background:#a855f7;" title="Purple Belt" onclick="setTheme('purple')"></div>
-            <div class="theme-dot" data-theme="silver" style="background:#94a3b8;" title="Stealth Silver" onclick="setTheme('silver')"></div>
-          </div>
-        </div>
-
-        <!-- Multi-Layer Storage Health -->
-        <div class="settings-section">
-          <div class="section-title">Data Durability Health</div>
-          <div class="storage-status-pill" id="storage-status-indicator">
-            <span>●</span> Checking persistent storage...
-          </div>
-          <div style="font-size:0.72rem; color:var(--text-dim); line-height:1.4;">
-            Active multi-layer replication (localStorage + IndexedDB). Protected against browser cache purges.
-          </div>
-        </div>
-
-        <!-- Data Vault: File Export & Restore -->
-        <div class="settings-section">
-          <div class="section-title">Data Vault &amp; Backup</div>
-          <div class="vault-btn-grid">
-            <button class="vault-btn" onclick="exportBackupJSON()">
-              <span>💾 Export Backup</span>
-            </button>
-            <label class="vault-btn" style="cursor:pointer;">
-              <span>📂 Restore File</span>
-              <input type="file" id="restore-file-input" accept=".json" style="display:none;" onchange="handleRestoreFile(event)" />
-            </label>
-          </div>
-        </div>
-
-        <!-- Cross-Device Raw Sync Code -->
-        <div class="settings-section">
-          <div class="section-title">Sync Code (Cross-Device)</div>
-          <textarea class="sync-box-textarea" id="sync-code-area" placeholder="Paste sync code here to restore, or copy below..."></textarea>
-          <div class="vault-btn-grid" style="margin-top:4px;">
-            <button class="vault-btn" onclick="copySyncCode()">📋 Copy Code</button>
-            <button class="vault-btn" onclick="importSyncCode()">📥 Import Code</button>
-          </div>
-        </div>
-      </div>
+    <!-- FOOTER ACTIONS -->
+    <div class="footer-actions">
+      <button class="action-btn" onclick="openReportCard()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6m-6 4h6m-6-8h6"/></svg>
+        FULL REPORT CARD
+      </button>
+      <button class="action-btn" onclick="copyWeeklySummary()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+        COPY REPORT TEXT
+      </button>
     </div>
   </div>
 
-  <!-- Scorecard Graphic Modal (1080 x 1920) -->
-  <div class="modal-overlay" id="scorecard-modal" onclick="onModalOverlayClick(event, 'scorecard-modal')">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <div class="modal-title">9:16 Video Scorecard</div>
-        <button class="modal-close" onclick="closeScorecardModal()">&times;</button>
+  <!-- COLOR SCHEME MODAL -->
+  <div class="modal-overlay" id="colorModal">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-title">CHOOSE ACCENT COLOR</div>
+        <button class="close-btn" onclick="closeModal('colorModal')">✕</button>
       </div>
-      <div class="modal-body">
-        <div class="preview-img-container">
-          <img id="scorecard-img" alt="Scorecard 1080x1920" />
-        </div>
-        <div class="modal-tip">
-          Tap <b>Save / Share</b> or <b>press &amp; hold</b> image to save to Camera Roll / Photos.
-        </div>
-        <div class="modal-actions">
-          <button class="btn-primary-action" onclick="saveOrShareScorecard()">
-            <span>Save / Share Image</span>
-          </button>
-          <div class="modal-btn-row">
-            <button class="btn-secondary-action" onclick="downloadScorecardPNG()">Download PNG</button>
-            <button class="btn-secondary-action" onclick="copyScorecardText()">Copy Text</button>
-          </div>
-        </div>
-      </div>
+      <div class="color-grid" id="paletteGrid"></div>
     </div>
   </div>
 
-  <!-- Hidden Canvas for Offline 1080x1920 Rendering -->
-  <canvas id="hidden-scorecard-canvas" width="1080" height="1920" style="display: none;"></canvas>
+  <!-- MANAGE CHORES MODAL -->
+  <div class="modal-overlay" id="choreModal">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-title">MANAGE CHORE LISTS</div>
+        <button class="close-btn" onclick="closeModal('choreModal')">✕</button>
+      </div>
 
-  <!-- Toast -->
-  <div class="toast" id="toast-el">Notification</div>
+      <div class="add-chore-box">
+        <input type="text" id="newChoreTitle" class="input-text" placeholder="ENTER NEW CHORE NAME...">
+        <div class="type-select-wrap">
+          <div class="type-radio-label selected" id="typeDaily" onclick="setNewChoreType('daily')">DAILY REPEAT</div>
+          <div class="type-radio-label" id="typeWeekly" onclick="setNewChoreType('weekly')">WEEKLY ONCE</div>
+        </div>
+        <button class="btn-submit" onclick="addNewChore()">+ ADD TO ROSTER</button>
+      </div>
+
+      <div class="section-title">
+        <span>CURRENT REGISTERED CHORES</span>
+      </div>
+      <div class="manage-list" id="manageListContainer"></div>
+
+      <button class="action-btn" style="width:100%; margin-top:8px;" onclick="resetChoreDefaults()">
+        RESTORE ORIGINAL DEFAULTS
+      </button>
+    </div>
+  </div>
+
+  <!-- FULL REPORT CARD MODAL -->
+  <div class="modal-overlay" id="reportCardModal">
+    <div class="modal" style="max-width: 520px;">
+      <div class="modal-head">
+        <div class="modal-title">WEEKLY ACCOUNTABILITY REPORT</div>
+        <button class="close-btn" onclick="closeModal('reportCardModal')">✕</button>
+      </div>
+
+      <div class="report-card-container">
+        <!-- TOP SCORE BLOCK -->
+        <div class="rc-top">
+          <div class="rc-title-block">
+            <div class="rc-title" id="rcWeekTitle">WEEK OF OCT 26 - NOV 1</div>
+            <div class="rc-sub">BASE TARGET: 33 DISCIPLINES + BONUS EXTRA CREDIT</div>
+          </div>
+          <div class="rc-score-badge">
+            <div class="rc-pct" id="rcScorePct">0%</div>
+            <div class="rc-grade" id="rcGradeBadge">MISSION READY</div>
+          </div>
+        </div>
+
+        <!-- 3-COL STATS -->
+        <div class="rc-highlight-grid">
+          <div class="rc-stat-box">
+            <div class="rc-stat-num" id="rcWeekdayTotal">0 / 25</div>
+            <div class="rc-stat-label">WEEKDAY DAILY</div>
+          </div>
+          <div class="rc-stat-box">
+            <div class="rc-stat-num" id="rcWeeklyTotal">0 / 8</div>
+            <div class="rc-stat-label">WEEKLY MASTER</div>
+          </div>
+          <div class="rc-stat-box bonus-box">
+            <div class="rc-stat-num" id="rcBonusTotal">+0 PTS</div>
+            <div class="rc-stat-label">WEEKEND EXTRA CREDIT</div>
+          </div>
+        </div>
+
+        <!-- DAY-BY-DAY AUDIT TABLE -->
+        <div style="font-size:0.68rem; font-weight:900; color:var(--text-muted); margin-top:4px;">
+          DAILY LOG BREAKDOWN
+        </div>
+        <table class="rc-table">
+          <thead>
+            <tr>
+              <th>DAY</th>
+              <th>LOGGED</th>
+              <th>TARGET TYPE</th>
+              <th style="text-align:right;">STATUS</th>
+            </tr>
+          </thead>
+          <tbody id="rcTableBody">
+            <!-- Injected dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display:flex; gap:10px; width:100%;">
+        <button class="btn-submit" style="flex:1;" onclick="copyWeeklySummary()">COPY FULL REPORT</button>
+        <button class="action-btn" style="flex:1; background:var(--surface);" onclick="closeModal('reportCardModal')">CLOSE</button>
+      </div>
+    </div>
+  </div>
 
   <script>
-    /* =========================================================================
-       MULTI-LAYER STORAGE ARCHITECTURE (IndexedDB + localStorage)
-       ========================================================================= */
-    const DB_NAME = 'WeeklyGoalsDB';
-    const DB_VERSION = 1;
-    const STORE_NAME = 'vault';
+    const DEFAULT_DAILY = [
+      { id: "d_kids_morning", title: "WAKE UP AND GET THE KIDS READY FOR SCHOOL" },
+      { id: "d_trash", title: "TAKE OUT THE TRASH" },
+      { id: "d_dishes", title: "DO THE DISHES" },
+      { id: "d_laundry", title: "ONE LOAD OF LAUNDRY" },
+      { id: "d_declutter", title: "HOUSE DECLUTTER" }
+    ];
 
-    let dbInstance = null;
+    const DEFAULT_WEEKLY = [
+      { id: "w_sweep", title: "SWEEP THE HOUSE" },
+      { id: "w_vacuum_house", title: "VACUUM THE HOUSE" },
+      { id: "w_wipe_kitchen", title: "WIPE DOWN KITCHEN" },
+      { id: "w_kids_laundry", title: "FACILITATE KIDS LAUNDRY" },
+      { id: "w_kids_showers", title: "FACILITATE KIDS SHOWERS" },
+      { id: "w_kids_bath", title: "CLEAN KIDS BATHROOM" },
+      { id: "w_parent_bath", title: "CLEAN PARENT BATHROOM" },
+      { id: "w_vacuum_couches", title: "VACUUM COUCHES" }
+    ];
 
-    function openDB() {
-      return new Promise((resolve) => {
-        if (!window.indexedDB) {
-          resolve(null);
-          return;
-        }
-        try {
-          const req = indexedDB.open(DB_NAME, DB_VERSION);
-          req.onupgradeneeded = (e) => {
-            const db = e.target.result;
-            if (!db.objectStoreNames.contains(STORE_NAME)) {
-              db.createObjectStore(STORE_NAME);
-            }
-          };
-          req.onsuccess = (e) => {
-            dbInstance = e.target.result;
-            resolve(dbInstance);
-          };
-          req.onerror = () => {
-            resolve(null);
-          };
-        } catch (err) {
-          resolve(null);
-        }
-      });
-    }
+    const PALETTES = [
+      { id: "green", name: "TACTICAL GREEN", hex: "#22c55e", glow: "rgba(34, 197, 94, 0.25)", subtle: "rgba(34, 197, 94, 0.12)" },
+      { id: "amber", name: "FORGE AMBER", hex: "#f59e0b", glow: "rgba(245, 158, 11, 0.25)", subtle: "rgba(245, 158, 11, 0.12)" },
+      { id: "blue", name: "STEEL BLUE", hex: "#38bdf8", glow: "rgba(56, 189, 248, 0.25)", subtle: "rgba(56, 189, 248, 0.12)" },
+      { id: "crimson", name: "CRIMSON", hex: "#ef4444", glow: "rgba(239, 68, 68, 0.25)", subtle: "rgba(239, 68, 68, 0.12)" },
+      { id: "monochrome", name: "MONOCHROME", hex: "#e2e8f0", glow: "rgba(226, 232, 240, 0.25)", subtle: "rgba(226, 232, 240, 0.12)" },
+      { id: "violet", name: "AMETHYST", hex: "#a855f7", glow: "rgba(168, 85, 247, 0.25)", subtle: "rgba(168, 85, 247, 0.12)" }
+    ];
 
-    async function idbGet(key) {
-      if (!dbInstance) await openDB();
-      if (!dbInstance) return null;
-      return new Promise((resolve) => {
-        try {
-          const tx = dbInstance.transaction(STORE_NAME, 'readonly');
-          const store = tx.objectStore(STORE_NAME);
-          const req = store.get(key);
-          req.onsuccess = () => resolve(req.result || null);
-          req.onerror = () => resolve(null);
-        } catch (e) {
-          resolve(null);
-        }
-      });
-    }
+    const DAYS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
-    async function idbSet(key, value) {
-      if (!dbInstance) await openDB();
-      if (!dbInstance) return;
-      return new Promise((resolve) => {
-        try {
-          const tx = dbInstance.transaction(STORE_NAME, 'readwrite');
-          const store = tx.objectStore(STORE_NAME);
-          store.put(value, key);
-          tx.oncomplete = () => resolve();
-          tx.onerror = () => resolve();
-        } catch (e) {
-          resolve();
-        }
-      });
-    }
-
-    async function initPersistentStorage() {
-      const indicator = document.getElementById('storage-status-indicator');
-      if (navigator.storage && navigator.storage.persist) {
-        try {
-          const isPersisted = await navigator.storage.persist();
-          if (isPersisted) {
-            indicator.innerHTML = '<span>●</span> Status: Persistent (Auto-Purge Shield Active)';
-            indicator.style.color = '#34d399';
-          } else {
-            indicator.innerHTML = '<span>●</span> Status: Standard Durable Storage';
-            indicator.style.color = '#38bdf8';
-          }
-        } catch (e) {
-          indicator.innerHTML = '<span>●</span> Status: Active (Multi-layer Backup)';
-        }
-      } else {
-        indicator.innerHTML = '<span>●</span> Status: Active (IndexedDB + Storage)';
-      }
-    }
-
-    /* =========================================================================
-       APP CONFIGURATION & DYNAMIC GOALS DEFINITION
-       ========================================================================= */
-    const THEMES = {
-      emerald: { hex: '#10b981', contrast: '#022c22', name: 'Tactical Green' },
-      sky: { hex: '#38bdf8', contrast: '#030712', name: 'Electric Sky' },
-      amber: { hex: '#f59e0b', contrast: '#451a03', name: 'Amber Gold' },
-      crimson: { hex: '#f43f5e', contrast: '#4c0519', name: 'Crimson Red' },
-      purple: { hex: '#a855f7', contrast: '#3b0764', name: 'Purple Belt' },
-      silver: { hex: '#94a3b8', contrast: '#0f172a', name: 'Stealth Silver' }
+    let state = {
+      accent: "green",
+      customDaily: null,
+      customWeekly: null,
+      weekOffset: 0,
+      activeDayIndex: 0, // 0=Mon, ... 5=Sat, 6=Sun
+      newChoreType: "daily",
+      logs: {}
     };
 
-    const DAYS_CONFIG = [
-      { id: 'mon', name: 'Monday', isRest: false },
-      { id: 'tue', name: 'Tuesday', isRest: false },
-      { id: 'wed', name: 'Wednesday', isRest: false },
-      { id: 'thu', name: 'Thursday', isRest: false },
-      { id: 'fri', name: 'Friday', isRest: false },
-      { id: 'sat', name: 'Saturday', isRest: true },
-      { id: 'sun', name: 'Sunday', isRest: true }
-    ];
-
-    const DEFAULT_GOALS = [
-      { id: 'run', name: 'Running', sub: '1 Mile', type: 'stepper', target: 5 },
-      { id: 'bjj', name: 'Jiu-Jitsu', sub: 'Mat Training', type: 'stepper', target: 5 },
-      { id: 'lift', name: 'Weightlifting', sub: 'Session', type: 'stepper', target: 3 },
-      { id: 'diet', name: 'Calorie Goal', sub: '1,600 kcal Daily', type: 'toggle', target: 5 }
-    ];
-
-    let userGoals = [...DEFAULT_GOALS];
-    let currentWeekStart = getMonday(new Date());
-    let currentTheme = 'emerald';
-    let appState = {}; // Master store holding all weeks
-
-    function safeStorageGet(key, defaultVal) {
+    function loadSavedState() {
       try {
-        const item = localStorage.getItem(key);
-        return item ? JSON.parse(item) : defaultVal;
+        const savedAccent = localStorage.getItem("bab_accent");
+        if (savedAccent) state.accent = savedAccent;
+
+        const savedDaily = localStorage.getItem("bab_roster_daily");
+        if (savedDaily) state.customDaily = JSON.parse(savedDaily);
+
+        const savedWeekly = localStorage.getItem("bab_roster_weekly");
+        if (savedWeekly) state.customWeekly = JSON.parse(savedWeekly);
+
+        const savedLogs = localStorage.getItem("bab_logs_master");
+        if (savedLogs) state.logs = JSON.parse(savedLogs);
       } catch (e) {
-        return defaultVal;
+        console.warn("Storage load error:", e);
+      }
+
+      const now = new Date();
+      const currentDay = now.getDay(); // 0 is Sun, 1 is Mon...
+      state.activeDayIndex = (currentDay === 0) ? 6 : (currentDay - 1);
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem("bab_accent", state.accent);
+        if (state.customDaily) localStorage.setItem("bab_roster_daily", JSON.stringify(state.customDaily));
+        if (state.customWeekly) localStorage.setItem("bab_roster_weekly", JSON.stringify(state.customWeekly));
+        localStorage.setItem("bab_logs_master", JSON.stringify(state.logs));
+      } catch (e) {
+        console.warn("Storage save error:", e);
       }
     }
 
-    function safeStorageSet(key, val) {
-      try {
-        localStorage.setItem(key, JSON.stringify(val));
-      } catch (e) {
-        console.warn('localStorage set failed:', e);
+    function getDailyRoster() {
+      return state.customDaily || DEFAULT_DAILY;
+    }
+
+    function getWeeklyRoster() {
+      return state.customWeekly || DEFAULT_WEEKLY;
+    }
+
+    function getMondayOfOffset(offsetWeeks) {
+      const now = new Date();
+      const day = now.getDay();
+      const diffToMon = (day === 0 ? -6 : 1) - day;
+      const monday = new Date(now);
+      monday.setDate(now.getDate() + diffToMon + (offsetWeeks * 7));
+      monday.setHours(0, 0, 0, 0);
+      return monday;
+    }
+
+    function getWeekKey(mondayDate) {
+      const target = new Date(mondayDate.valueOf());
+      const dayNr = (mondayDate.getDay() + 6) % 7;
+      target.setDate(target.getDate() - dayNr + 3);
+      const firstThursday = target.valueOf();
+      target.setMonth(0, 1);
+      if (target.getDay() !== 4) {
+        target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
       }
+      const weekNum = 1 + Math.ceil((firstThursday - target) / 604800000);
+      return `${mondayDate.getFullYear()}-W${String(weekNum).padStart(2, "0")}`;
     }
 
-    /* =========================================================================
-       DATE UTILITIES
-       ========================================================================= */
-    function getMonday(d) {
-      const date = new Date(d);
-      const day = date.getDay();
-      const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-      const mon = new Date(date.setDate(diff));
-      mon.setHours(0, 0, 0, 0);
-      return mon;
-    }
-
-    function formatWeekKey(dateObj) {
+    function formatDateKey(dateObj) {
       const y = dateObj.getFullYear();
-      const m = String(dateObj.getMonth() + 1).padStart(2, '0');
-      const d = String(dateObj.getDate()).padStart(2, '0');
+      const m = String(dateObj.getMonth() + 1).padStart(2, "0");
+      const d = String(dateObj.getDate()).padStart(2, "0");
       return `${y}-${m}-${d}`;
     }
 
-    function formatWeekDisplayLabel(monDate) {
-      const sunDate = new Date(monDate);
-      sunDate.setDate(monDate.getDate() + 6);
-
-      const monM = monDate.toLocaleString('default', { month: 'short' });
-      const sunM = sunDate.toLocaleString('default', { month: 'short' });
-
-      if (monM === sunM) {
-        return `${monM} ${monDate.getDate()} – ${sunDate.getDate()}, ${sunDate.getFullYear()}`;
+    function getFullWeekDays(mondayDate) {
+      const days = [];
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(mondayDate);
+        d.setDate(mondayDate.getDate() + i);
+        days.push(d);
       }
-      return `${monM} ${monDate.getDate()} – ${sunM} ${sunDate.getDate()}, ${sunDate.getFullYear()}`;
+      return days;
     }
 
-    function getDateForDayIndex(monDate, dayIdx) {
-      const d = new Date(monDate);
-      d.setDate(monDate.getDate() + dayIdx);
-      return d;
+    function applyAccent(paletteId) {
+      const pal = PALETTES.find(p => p.id === paletteId) || PALETTES[0];
+      state.accent = pal.id;
+      document.documentElement.style.setProperty("--accent", pal.hex);
+      document.documentElement.style.setProperty("--accent-glow", pal.glow);
+      document.documentElement.style.setProperty("--accent-subtle", pal.subtle);
+      saveState();
+      renderPaletteGrid();
     }
 
-    /* =========================================================================
-       THEME MANAGEMENT
-       ========================================================================= */
-    function setTheme(themeKey) {
-      if (!THEMES[themeKey]) themeKey = 'emerald';
-      currentTheme = themeKey;
-      safeStorageSet('wdt_theme', themeKey);
-      idbSet('wdt_theme', themeKey);
-
-      const t = THEMES[themeKey];
-      document.documentElement.style.setProperty('--accent', t.hex);
-      document.documentElement.style.setProperty('--accent-glow', hexToRgba(t.hex, 0.28));
-      document.documentElement.style.setProperty('--accent-muted', hexToRgba(t.hex, 0.14));
-      document.documentElement.style.setProperty('--accent-contrast', t.contrast);
-
-      document.querySelectorAll('.theme-dot').forEach(el => {
-        el.classList.toggle('active', el.getAttribute('data-theme') === themeKey);
-      });
+    function renderPaletteGrid() {
+      const container = document.getElementById("paletteGrid");
+      container.innerHTML = PALETTES.map(p => `
+        <div class="color-chip ${state.accent === p.id ? 'active' : ''}" onclick="applyAccent('${p.id}')">
+          <div class="color-dot" style="background:${p.hex}; box-shadow:0 0 8px ${p.glow};"></div>
+          <div class="color-label">${p.name}</div>
+        </div>
+      `).join("");
     }
 
-    function hexToRgba(hex, alpha) {
-      const clean = hex.replace('#', '');
-      const r = parseInt(clean.substring(0, 2), 16);
-      const g = parseInt(clean.substring(2, 4), 16);
-      const b = parseInt(clean.substring(4, 6), 16);
-      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-    }
-
-    /* =========================================================================
-       DYNAMIC GOAL MANAGEMENT
-       ========================================================================= */
-    function getBaselinePoints() {
-      return userGoals.reduce((sum, g) => sum + (Number(g.target) || 0), 0) || 1;
-    }
-
-    function renderGoalCustomizer() {
-      const list = document.getElementById('goals-customizer-list');
-      list.innerHTML = '';
-
-      userGoals.forEach((goal, idx) => {
-        const item = document.createElement('div');
-        item.style.cssText = 'background:var(--bg-input); border:1px solid var(--border); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:8px;';
-        item.innerHTML = `
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
-            <input type="text" value="${escapeHtml(goal.name)}" placeholder="Goal Name" style="background:transparent; border:none; border-bottom:1px solid var(--border-light); color:#fff; font-weight:700; font-size:0.85rem; padding:2px 4px; outline:none; flex:1;" onchange="updateGoalProperty(${idx}, 'name', this.value)" />
-            <button onclick="removeGoal(${idx})" style="background:transparent; border:none; color:#ef4444; font-size:1.1rem; cursor:pointer;" title="Delete Goal">&times;</button>
-          </div>
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:0.75rem;">
-            <input type="text" value="${escapeHtml(goal.sub || '')}" placeholder="Sublabel (e.g. 1 Mile, 1,600 kcal)" style="background:transparent; border:none; border-bottom:1px solid var(--border-light); color:var(--text-dim); font-size:0.75rem; padding:2px 4px; outline:none; flex:1;" onchange="updateGoalProperty(${idx}, 'sub', this.value)" />
-            <div style="display:flex; align-items:center; gap:6px;">
-              <span style="color:var(--text-muted);">Target:</span>
-              <input type="number" min="1" max="14" value="${goal.target}" style="width:42px; background:var(--bg-card); border:1px solid var(--border-light); color:#fff; font-weight:700; border-radius:4px; padding:2px 4px; text-align:center;" onchange="updateGoalProperty(${idx}, 'target', parseInt(this.value) || 1)" />
-              <select style="background:var(--bg-card); border:1px solid var(--border-light); color:#fff; border-radius:4px; padding:2px 4px; font-size:0.72rem;" onchange="updateGoalProperty(${idx}, 'type', this.value)">
-                <option value="stepper" ${goal.type === 'stepper' ? 'selected' : ''}>Stepper (-/+)</option>
-                <option value="toggle" ${goal.type === 'toggle' ? 'selected' : ''}>Switch (On/Off)</option>
-              </select>
-            </div>
-          </div>
-        `;
-        list.appendChild(item);
-      });
-
-      document.getElementById('custom-baseline-sum').textContent = getBaselinePoints();
-    }
-
-    function updateGoalProperty(index, prop, value) {
-      if (!userGoals[index]) return;
-      userGoals[index][prop] = value;
-      saveGoals();
-      renderGoalCustomizer();
-      renderApp();
-    }
-
-    function addNewGoalPrompt() {
-      const newId = 'custom_' + Date.now();
-      userGoals.push({
-        id: newId,
-        name: 'New Custom Goal',
-        sub: 'Target Session',
-        type: 'stepper',
-        target: 5
-      });
-      saveGoals();
-      renderGoalCustomizer();
-      renderApp();
-      showToast('New goal added');
-    }
-
-    function removeGoal(index) {
-      if (userGoals.length <= 1) {
-        showToast('Must keep at least 1 goal');
-        return;
-      }
-      userGoals.splice(index, 1);
-      saveGoals();
-      renderGoalCustomizer();
-      renderApp();
-      showToast('Goal removed');
-    }
-
-    function resetGoalsToDefault() {
-      userGoals = JSON.parse(JSON.stringify(DEFAULT_GOALS));
-      saveGoals();
-      renderGoalCustomizer();
-      renderApp();
-      showToast('Goals reset to default');
-    }
-
-    async function saveGoals() {
-      safeStorageSet('weekly_goals_config', userGoals);
-      await idbSet('weekly_goals_config', userGoals);
-    }
-
-    /* =========================================================================
-       DATA PERSISTENCE & AUTO-REPLICATION
-       ========================================================================= */
-    async function loadMasterState() {
-      // Load custom goals if saved
-      const savedGoals = safeStorageGet('weekly_goals_config', null);
-      const idbGoals = await idbGet('weekly_goals_config');
-      if (savedGoals && Array.isArray(savedGoals) && savedGoals.length > 0) {
-        userGoals = savedGoals;
-      } else if (idbGoals && Array.isArray(idbGoals) && idbGoals.length > 0) {
-        userGoals = idbGoals;
-      }
-
-      // Try localStorage master store
-      let storedMaster = safeStorageGet('weekly_goals_master_store', null);
-
-      if (!storedMaster) {
-        storedMaster = {};
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k && k.startsWith('wdt_week_')) {
-            const wkKey = k.replace('wdt_week_', '');
-            storedMaster[wkKey] = safeStorageGet(k, null);
-          }
-        }
-      }
-
-      const idbBackup = await idbGet('weekly_goals_master_store');
-
-      if (idbBackup && Object.keys(idbBackup).length > Object.keys(storedMaster).length) {
-        storedMaster = idbBackup;
-        safeStorageSet('weekly_goals_master_store', storedMaster);
-      } else if (storedMaster && Object.keys(storedMaster).length > 0) {
-        await idbSet('weekly_goals_master_store', storedMaster);
-      }
-
-      appState = storedMaster || {};
-    }
-
-    async function persistMasterState() {
-      safeStorageSet('weekly_goals_master_store', appState);
-      const currentWeekKey = formatWeekKey(currentWeekStart);
-      if (appState[currentWeekKey]) {
-        safeStorageSet(`wdt_week_${currentWeekKey}`, appState[currentWeekKey]);
-      }
-      await idbSet('weekly_goals_master_store', appState);
-    }
-
-    function getWeekData(weekKey) {
-      if (!appState[weekKey]) {
-        appState[weekKey] = {
-          days: {
-            mon: { notes: '' },
-            tue: { notes: '' },
-            wed: { notes: '' },
-            thu: { notes: '' },
-            fri: { notes: '' },
-            sat: { notes: '' },
-            sun: { notes: '' }
-          }
-        };
-      }
-      return appState[weekKey];
-    }
-
-    function computeWeekStats(weekKey) {
-      const data = getWeekData(weekKey);
-      const goalTotals = {};
-      userGoals.forEach(g => {
-        goalTotals[g.id] = 0;
-      });
-
-      DAYS_CONFIG.forEach(d => {
-        const dayObj = data.days[d.id] || {};
-        userGoals.forEach(g => {
-          if (g.type === 'stepper') {
-            goalTotals[g.id] += Number(dayObj[g.id]) || 0;
-          } else {
-            if (dayObj[g.id]) goalTotals[g.id] += 1;
-          }
-        });
-      });
-
-      let totalPoints = 0;
-      userGoals.forEach(g => {
-        totalPoints += goalTotals[g.id];
-      });
-
-      const baseline = getBaselinePoints();
-      const scoreOutOf10 = ((totalPoints / baseline) * 10).toFixed(1);
-
-      return { goalTotals, totalPoints, scoreOutOf10, baseline };
-    }
-
-    /* =========================================================================
-       UI RENDERING
-       ========================================================================= */
-    function renderApp() {
-      const weekKey = formatWeekKey(currentWeekStart);
-      const weekData = getWeekData(weekKey);
-      const stats = computeWeekStats(weekKey);
-
-      document.getElementById('week-display-label').textContent = formatWeekDisplayLabel(currentWeekStart);
-      document.getElementById('hud-grade-val').textContent = stats.scoreOutOf10;
-      
-      const ptsDiff = stats.totalPoints - stats.baseline;
-      if (ptsDiff > 0) {
-        document.getElementById('hud-pts-val').textContent = `${stats.totalPoints} / ${stats.baseline} PTS (+${ptsDiff} BONUS)`;
-      } else {
-        document.getElementById('hud-pts-val').textContent = `${stats.totalPoints} / ${stats.baseline} PTS`;
-      }
-
-      // Render mini pillars in HUD
-      const miniRow = document.getElementById('hud-pillars-container');
-      miniRow.innerHTML = '';
-      userGoals.forEach(g => {
-        const val = stats.goalTotals[g.id] || 0;
-        const card = document.createElement('div');
-        card.className = 'pillar-mini-card';
-        card.innerHTML = `
-          <span class="pm-label">${escapeHtml(g.name)}</span>
-          <div><span class="pm-val">${val}</span> <span class="pm-denom">/ ${g.target} pts</span></div>
-        `;
-        miniRow.appendChild(card);
-      });
-
-      // Render Days
-      const daysContainer = document.getElementById('days-container');
-      daysContainer.innerHTML = '';
-
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      DAYS_CONFIG.forEach((cfg, idx) => {
-        const dayDate = getDateForDayIndex(currentWeekStart, idx);
-        const isToday = dayDate.getTime() === today.getTime();
-        const dateStr = dayDate.toLocaleDateString('default', { month: 'short', day: 'numeric' });
-
-        const dayRecord = weekData.days[cfg.id] || { notes: '' };
-        
-        let dayPts = 0;
-        userGoals.forEach(g => {
-          if (g.type === 'stepper') {
-            dayPts += Number(dayRecord[g.id]) || 0;
-          } else {
-            if (dayRecord[g.id]) dayPts += 1;
-          }
-        });
-
-        const card = document.createElement('div');
-        card.className = `day-card ${isToday ? 'today' : ''}`;
-
-        let itemsHtml = '';
-        userGoals.forEach(g => {
-          if (g.type === 'stepper') {
-            const count = Number(dayRecord[g.id]) || 0;
-            itemsHtml += `
-              <div class="tracker-item">
-                <div class="tracker-label-group">
-                  <span class="tracker-name">${escapeHtml(g.name)}</span>
-                  <span class="tracker-sub">${escapeHtml(g.sub || '')}</span>
-                </div>
-                <div class="stepper">
-                  <button type="button" class="stepper-btn" onclick="updateCount('${cfg.id}', '${g.id}', -1)">–</button>
-                  <span class="stepper-val ${count > 0 ? 'active-val' : ''}">${count}</span>
-                  <button type="button" class="stepper-btn" onclick="updateCount('${cfg.id}', '${g.id}', 1)">+</button>
-                </div>
-              </div>
-            `;
-          } else {
-            const isChecked = Boolean(dayRecord[g.id]);
-            itemsHtml += `
-              <div class="tracker-item">
-                <div class="tracker-label-group">
-                  <span class="tracker-name">${escapeHtml(g.name)}</span>
-                  <span class="tracker-sub">${escapeHtml(g.sub || '')}</span>
-                </div>
-                <label class="cal-toggle-wrap">
-                  <input type="checkbox" class="cal-checkbox" ${isChecked ? 'checked' : ''} onchange="toggleGoalChecked('${cfg.id}', '${g.id}', this.checked)" />
-                  <div class="toggle-track">
-                    <div class="toggle-thumb"></div>
-                  </div>
-                </label>
-              </div>
-            `;
-          }
-        });
-
-        card.innerHTML = `
-          <div class="day-header">
-            <div class="day-name-box">
-              <span class="day-name">${cfg.name}</span>
-              <span class="day-date">${dateStr}${cfg.isRest ? ' • Recovery' : ''}</span>
-            </div>
-            <div class="day-pts-sum">${dayPts} pt${dayPts === 1 ? '' : 's'}</div>
-          </div>
-
-          <div class="items-grid">
-            ${itemsHtml}
-          </div>
-
-          <!-- Notes -->
-          <div class="day-notes-wrap">
-            <textarea class="notes-textarea" placeholder="Daily training notes, weights, rolls, run pace..." oninput="updateNotes('${cfg.id}', this.value)">${escapeHtml(dayRecord.notes || '')}</textarea>
-          </div>
-        `;
-
-        daysContainer.appendChild(card);
-      });
-    }
-
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
-
-    /* =========================================================================
-       USER MUTATIONS & INSTANT REPLICATION
-       ========================================================================= */
-    function updateCount(dayId, goalId, delta) {
-      const weekKey = formatWeekKey(currentWeekStart);
-      const data = getWeekData(weekKey);
-      if (!data.days[dayId]) data.days[dayId] = { notes: '' };
-
-      let current = Number(data.days[dayId][goalId]) || 0;
-      current = Math.max(0, current + delta);
-      data.days[dayId][goalId] = current;
-
-      persistMasterState();
-      renderApp();
-    }
-
-    function toggleGoalChecked(dayId, goalId, isChecked) {
-      const weekKey = formatWeekKey(currentWeekStart);
-      const data = getWeekData(weekKey);
-      if (!data.days[dayId]) data.days[dayId] = { notes: '' };
-
-      data.days[dayId][goalId] = Boolean(isChecked);
-      persistMasterState();
-      renderApp();
-    }
-
-    let notesDebounce = null;
-    function updateNotes(dayId, text) {
-      const weekKey = formatWeekKey(currentWeekStart);
-      const data = getWeekData(weekKey);
-      if (!data.days[dayId]) data.days[dayId] = { notes: '' };
-
-      data.days[dayId].notes = text;
-
-      clearTimeout(notesDebounce);
-      notesDebounce = setTimeout(() => {
-        persistMasterState();
-      }, 300);
-    }
-
-    function shiftWeek(offset) {
-      const newMon = new Date(currentWeekStart);
-      newMon.setDate(newMon.getDate() + offset * 7);
-      currentWeekStart = newMon;
+    function shiftWeek(delta) {
+      state.weekOffset += delta;
       renderApp();
     }
 
     function jumpToCurrentWeek() {
-      currentWeekStart = getMonday(new Date());
+      state.weekOffset = 0;
+      const currentDay = new Date().getDay();
+      state.activeDayIndex = (currentDay === 0) ? 6 : (currentDay - 1);
       renderApp();
     }
 
-    /* =========================================================================
-       SETTINGS & DATA VAULT ACTIONS (Backup / Restore / Sync Code)
-       ========================================================================= */
-    function openSettingsModal() {
-      renderGoalCustomizer();
-      document.getElementById('settings-modal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-      const syncArea = document.getElementById('sync-code-area');
-      syncArea.value = JSON.stringify({
-        version: 2,
-        theme: currentTheme,
-        goals: userGoals,
-        timestamp: new Date().toISOString(),
-        store: appState
-      });
+    function selectDay(index) {
+      state.activeDayIndex = index;
+      renderApp();
     }
 
-    function closeSettingsModal() {
-      document.getElementById('settings-modal').classList.remove('open');
-      document.body.style.overflow = '';
+    function toggleDailyChore(choreId) {
+      const monday = getMondayOfOffset(state.weekOffset);
+      const weekDays = getFullWeekDays(monday);
+      const targetDate = weekDays[state.activeDayIndex];
+      const dateKey = formatDateKey(targetDate);
+
+      if (!state.logs[dateKey]) state.logs[dateKey] = {};
+      state.logs[dateKey][choreId] = !state.logs[dateKey][choreId];
+
+      saveState();
+      renderApp();
     }
 
-    function exportBackupJSON() {
-      const backupPayload = {
-        app: 'Weekly Goals',
-        version: 2,
-        theme: currentTheme,
-        goals: userGoals,
-        exportedAt: new Date().toISOString(),
-        store: appState
-      };
+    function toggleWeeklyChore(choreId) {
+      const monday = getMondayOfOffset(state.weekOffset);
+      const weekKey = getWeekKey(monday);
 
-      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(backupPayload, null, 2));
-      const todayStr = new Date().toISOString().split('T')[0];
-      const downloadAnchor = document.createElement('a');
-      downloadAnchor.setAttribute('href', dataStr);
-      downloadAnchor.setAttribute('download', `weekly_goals_backup_${todayStr}.json`);
-      document.body.appendChild(downloadAnchor);
-      downloadAnchor.click();
-      downloadAnchor.remove();
+      if (!state.logs[weekKey]) state.logs[weekKey] = {};
+      state.logs[weekKey][choreId] = !state.logs[weekKey][choreId];
 
-      showToast('Backup exported successfully');
+      saveState();
+      renderApp();
     }
 
-    function handleRestoreFile(event) {
-      const file = event.target.files[0];
-      if (!file) return;
+    // ----------------------------------------------------
+    // COMPREHENSIVE SCORE & STATS CALCULATION
+    // ----------------------------------------------------
+    function getFullAuditStats() {
+      const monday = getMondayOfOffset(state.weekOffset);
+      const weekDays = getFullWeekDays(monday);
+      const weekKey = getWeekKey(monday);
+      const dailyRoster = getDailyRoster();
+      const weeklyRoster = getWeeklyRoster();
 
-      const reader = new FileReader();
-      reader.onload = async (e) => {
-        try {
-          const parsed = JSON.parse(e.target.result);
-          const incomingStore = parsed.store || parsed;
-          if (typeof incomingStore !== 'object') throw new Error('Invalid format');
+      let weekdayCompleted = 0;
+      const totalWeekdayBase = dailyRoster.length * 5; // Monday through Friday
 
-          appState = Object.assign({}, appState, incomingStore);
-          if (parsed.goals && Array.isArray(parsed.goals)) {
-            userGoals = parsed.goals;
-            saveGoals();
-          }
-          if (parsed.theme && THEMES[parsed.theme]) setTheme(parsed.theme);
+      let weekendBonusCompleted = 0;
 
-          await persistMasterState();
-          renderGoalCustomizer();
-          renderApp();
-          showToast('Data & goals restored from file');
-          closeSettingsModal();
-        } catch (err) {
-          showToast('Invalid backup file');
+      const dayBreakdown = weekDays.map((d, idx) => {
+        const dKey = formatDateKey(d);
+        const isWeekend = idx >= 5;
+        let count = 0;
+
+        if (state.logs[dKey]) {
+          dailyRoster.forEach(item => {
+            if (state.logs[dKey][item.id]) count++;
+          });
         }
-      };
-      reader.readAsText(file);
-      event.target.value = '';
-    }
 
-    function copySyncCode() {
-      const syncArea = document.getElementById('sync-code-area');
-      const text = syncArea.value;
-      if (!text) return;
-      copyToClipboard(text);
-      showToast('Sync code copied to clipboard');
-    }
-
-    async function importSyncCode() {
-      const syncArea = document.getElementById('sync-code-area');
-      const text = syncArea.value.trim();
-      if (!text) {
-        showToast('Paste sync code first');
-        return;
-      }
-
-      try {
-        const parsed = JSON.parse(text);
-        const incomingStore = parsed.store || parsed;
-        if (typeof incomingStore !== 'object') throw new Error('Invalid format');
-
-        appState = Object.assign({}, appState, incomingStore);
-        if (parsed.goals && Array.isArray(parsed.goals)) {
-          userGoals = parsed.goals;
-          saveGoals();
+        if (isWeekend) {
+          weekendBonusCompleted += count;
+        } else {
+          weekdayCompleted += count;
         }
-        if (parsed.theme && THEMES[parsed.theme]) setTheme(parsed.theme);
 
-        await persistMasterState();
-        renderGoalCustomizer();
-        renderApp();
-        showToast('Sync code imported successfully');
-        closeSettingsModal();
-      } catch (err) {
-        showToast('Invalid sync code JSON');
-      }
-    }
-
-    /* =========================================================================
-       DYNAMIC HIGH-RESOLUTION 9:16 (1080 x 1920) SCORECARD ENGINE
-       ========================================================================= */
-    function renderScorecardToCanvas() {
-      const canvas = document.getElementById('hidden-scorecard-canvas');
-      const ctx = canvas.getContext('2d');
-      const W = 1080;
-      const H = 1920;
-
-      canvas.width = W;
-      canvas.height = H;
-
-      const weekKey = formatWeekKey(currentWeekStart);
-      const stats = computeWeekStats(weekKey);
-      const rangeStr = formatWeekDisplayLabel(currentWeekStart);
-      const theme = THEMES[currentTheme] || THEMES.emerald;
-      const accent = theme.hex;
-
-      // 1. Tactical Dark Background
-      const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
-      bgGrad.addColorStop(0, '#04070e');
-      bgGrad.addColorStop(0.35, '#0b121e');
-      bgGrad.addColorStop(0.7, '#070b13');
-      bgGrad.addColorStop(1, '#020306');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, W, H);
-
-      // 2. High-Tech Dot Matrix / Grid
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
-      ctx.lineWidth = 1;
-      const step = 60;
-      for (let x = 0; x <= W; x += step) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, H);
-        ctx.stroke();
-      }
-      for (let y = 0; y <= H; y += step) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(W, y);
-        ctx.stroke();
-      }
-
-      // 3. Top Ambient Radial Glow
-      const topGlow = ctx.createRadialGradient(W / 2, 280, 40, W / 2, 280, 520);
-      topGlow.addColorStop(0, hexToRgba(accent, 0.18));
-      topGlow.addColorStop(1, 'transparent');
-      ctx.fillStyle = topGlow;
-      ctx.fillRect(0, 0, W, 800);
-
-      // 4. Outer Video Framing (Safe Area Border)
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-      ctx.lineWidth = 2;
-      drawRoundRect(ctx, 48, 64, W - 96, H - 128, 36);
-      ctx.stroke();
-
-      // Top Header Badge
-      ctx.fillStyle = accent;
-      ctx.fillRect(74, 90, 18, 18);
-
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#64748b';
-      ctx.font = '700 19px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText('WEEKLY GOALS', 106, 105);
-
-      ctx.textAlign = 'right';
-      ctx.fillStyle = '#64748b';
-      ctx.font = '600 19px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText('SCORECARD', W - 74, 105);
-
-      // Main Title with Kanji Accent
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#ffffff';
-      ctx.font = '900 62px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-      ctx.fillText('WEEKLY GOALS', 74, 220);
-
-      // Subtitle
-      ctx.fillStyle = accent;
-      ctx.font = '700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText(`忍耐 • ${rangeStr.toUpperCase()}`, 74, 268);
-
-      // Divider Line
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.moveTo(74, 308);
-      ctx.lineTo(W - 74, 308);
-      ctx.stroke();
-
-      // 5. Hero Score Panel
-      const heroY = 356;
-      const heroH = 430;
-      const heroW = W - 148;
-
-      drawRoundRect(ctx, 74, heroY, heroW, heroH, 32);
-      const heroGrad = ctx.createLinearGradient(74, heroY, 74 + heroW, heroY + heroH);
-      heroGrad.addColorStop(0, 'rgba(15, 23, 42, 0.95)');
-      heroGrad.addColorStop(1, 'rgba(6, 10, 20, 0.98)');
-      ctx.fillStyle = heroGrad;
-      ctx.fill();
-      ctx.strokeStyle = accent;
-      ctx.lineWidth = 3.5;
-      ctx.stroke();
-
-      // Left: Grade
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = '700 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-      ctx.fillText('FINAL WEEKLY GRADE', 120, heroY + 84);
-
-      ctx.fillStyle = '#ffffff';
-      ctx.font = '900 162px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText(stats.scoreOutOf10, 114, heroY + 252);
-
-      ctx.fillStyle = '#64748b';
-      ctx.font = '700 64px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText('/ 10.0', 520, heroY + 252);
-
-      ctx.fillStyle = '#64748b';
-      ctx.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText('DISCIPLINE RATING', 120, heroY + 342);
-
-      // Separator
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.moveTo(690, heroY + 45);
-      ctx.lineTo(690, heroY + heroH - 45);
-      ctx.stroke();
-
-      // Right: Points
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = '700 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-      ctx.fillText('POINTS EARNED', 734, heroY + 120);
-
-      ctx.fillStyle = '#ffffff';
-      ctx.font = '800 88px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText(`${stats.totalPoints}`, 734, heroY + 230);
-
-      ctx.fillStyle = '#64748b';
-      ctx.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      const ptsDiff = stats.totalPoints - stats.baseline;
-      const ptsSub = ptsDiff > 0 ? `+${ptsDiff} BONUS POINTS` : `${stats.baseline} PT BASELINE`;
-      ctx.fillText(ptsSub, 734, heroY + 295);
-
-      // 6. Section Header
-      const pillarsY = 852;
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = '800 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-      ctx.fillText('TRAINING GOALS', 74, pillarsY);
-
-      ctx.textAlign = 'right';
-      ctx.fillStyle = '#64748b';
-      ctx.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText('WEEKLY LOG', W - 74, pillarsY);
-
-      // 7. Dynamic Goals Rendering
-      const startY = 890;
-      const count = Math.min(userGoals.length, 5); // display up to 5 on video card cleanly
-      const cardH = count <= 4 ? 146 : 116;
-      const gapY = count <= 4 ? 20 : 14;
-
-      for (let idx = 0; idx < count; idx++) {
-        const g = userGoals[idx];
-        const pts = stats.goalTotals[g.id] || 0;
-        const py = startY + idx * (cardH + gapY);
-
-        drawRoundRect(ctx, 74, py, W - 148, cardH, 20);
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.76)';
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-        ctx.lineWidth = 1.8;
-        ctx.stroke();
-
-        // Icon Pill / Badge
-        const pillW = cardH <= 120 ? 64 : 76;
-        drawRoundRect(ctx, 96, py + (cardH - pillW)/2, pillW, pillW, 14);
-        ctx.fillStyle = 'rgba(30, 41, 59, 0.85)';
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
-        ctx.lineWidth = 1;
-        ctx.stroke();
-
-        ctx.fillStyle = accent;
-        ctx.font = '800 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-        ctx.textAlign = 'center';
-        const acronym = g.name.substring(0, 4).toUpperCase();
-        ctx.fillText(acronym, 96 + pillW / 2, py + (cardH / 2) + 6);
-
-        // Titles
-        ctx.textAlign = 'left';
-        ctx.fillStyle = '#ffffff';
-        ctx.font = count <= 4 ? '700 28px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' : '700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-        ctx.fillText(g.name.toUpperCase(), 194, py + (cardH <= 120 ? 46 : 56));
-
-        ctx.fillStyle = '#64748b';
-        ctx.font = '600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-        ctx.fillText((g.sub || 'GOAL').toUpperCase(), 194, py + (cardH <= 120 ? 76 : 88));
-
-        // Score
-        ctx.textAlign = 'right';
-        ctx.font = count <= 4 ? '800 42px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace' : '800 36px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-        ctx.fillStyle = pts >= g.target ? accent : '#ffffff';
-        ctx.fillText(`${pts}`, W - 176, py + (cardH <= 120 ? 56 : 66));
-
-        ctx.font = '600 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-        ctx.fillStyle = '#64748b';
-        ctx.fillText(`/${g.target}`, W - 110, py + (cardH <= 120 ? 56 : 66));
-
-        // Progress Bar
-        const barX = 194;
-        const barY = py + (cardH <= 120 ? 94 : 108);
-        const barW = W - 148 - 226;
-        const barH = 10;
-
-        drawRoundRect(ctx, barX, barY, barW, barH, 5);
-        ctx.fillStyle = 'rgba(30, 41, 59, 0.9)';
-        ctx.fill();
-
-        const pct = Math.min(pts / g.target, 1.0);
-        if (pct > 0) {
-          const filledW = Math.max(barW * pct, 12);
-          drawRoundRect(ctx, barX, barY, filledW, barH, 5);
-          const barGrad = ctx.createLinearGradient(barX, 0, barX + barW, 0);
-          barGrad.addColorStop(0, accent);
-          barGrad.addColorStop(1, '#ffffff');
-          ctx.fillStyle = barGrad;
-          ctx.fill();
-        }
-      }
-
-      // 8. Clean Balanced Footer
-      const footerY = 1680;
-      drawRoundRect(ctx, 74, footerY, W - 148, 90, 22);
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.6)';
-      ctx.fill();
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = '700 19px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText('CONSISTENCY OVER MOTIVATION', 114, footerY + 52);
-
-      ctx.textAlign = 'right';
-      ctx.fillStyle = accent;
-      ctx.font = '700 19px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace';
-      ctx.fillText(`${stats.baseline}-POINT SYSTEM`, W - 114, footerY + 52);
-
-      const imgElem = document.getElementById('scorecard-img');
-      imgElem.src = canvas.toDataURL('image/png');
-    }
-
-    function drawRoundRect(ctx, x, y, width, height, radius) {
-      ctx.beginPath();
-      ctx.moveTo(x + radius, y);
-      ctx.lineTo(x + width - radius, y);
-      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-      ctx.lineTo(x + width, y + height - radius);
-      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-      ctx.lineTo(x + radius, y + height);
-      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-      ctx.lineTo(x, y + radius);
-      ctx.quadraticCurveTo(x, y, x + radius, y);
-      ctx.closePath();
-    }
-
-    /* =========================================================================
-       MODAL CONTROLS & EXPORT ACTIONS
-       ========================================================================= */
-    function openScorecardModal() {
-      try {
-        renderScorecardToCanvas();
-        document.getElementById('scorecard-modal').classList.add('open');
-        document.body.style.overflow = 'hidden';
-      } catch (err) {
-        showToast('Error rendering scorecard');
-      }
-    }
-
-    function closeScorecardModal() {
-      document.getElementById('scorecard-modal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    function onModalOverlayClick(e, modalId) {
-      if (e.target && e.target.id === modalId) {
-        if (modalId === 'settings-modal') closeSettingsModal();
-        if (modalId === 'scorecard-modal') closeScorecardModal();
-      }
-    }
-
-    async function saveOrShareScorecard() {
-      const canvas = document.getElementById('hidden-scorecard-canvas');
-      const weekKey = formatWeekKey(currentWeekStart);
-      const fileName = `weekly-goals-${weekKey}.png`;
-
-      try {
-        canvas.toBlob(async (blob) => {
-          if (!blob) {
-            downloadScorecardPNG();
-            return;
-          }
-
-          const file = new File([blob], fileName, { type: 'image/png' });
-
-          if (navigator.canShare && navigator.canShare({ files: [file] })) {
-            try {
-              await navigator.share({
-                title: 'Weekly Goals Scorecard',
-                files: [file]
-              });
-              showToast('Scorecard shared successfully');
-              return;
-            } catch (shareErr) {
-              if (shareErr.name !== 'AbortError') {
-                downloadBlob(blob, fileName);
-              }
-              return;
-            }
-          }
-
-          downloadBlob(blob, fileName);
-        }, 'image/png');
-      } catch (err) {
-        downloadScorecardPNG();
-      }
-    }
-
-    function downloadScorecardPNG() {
-      const canvas = document.getElementById('hidden-scorecard-canvas');
-      const weekKey = formatWeekKey(currentWeekStart);
-      const fileName = `weekly-goals-${weekKey}.png`;
-
-      try {
-        canvas.toBlob((blob) => {
-          if (blob) {
-            downloadBlob(blob, fileName);
-          } else {
-            const link = document.createElement('a');
-            link.download = fileName;
-            link.href = canvas.toDataURL('image/png');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            showToast('Scorecard saved');
-          }
-        }, 'image/png');
-      } catch (e) {
-        showToast('Download blocked. Long-press image to save');
-      }
-    }
-
-    function downloadBlob(blob, fileName) {
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = fileName;
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setTimeout(() => URL.revokeObjectURL(url), 4000);
-      showToast('Scorecard image downloaded');
-    }
-
-    function copyScorecardText() {
-      const weekKey = formatWeekKey(currentWeekStart);
-      const stats = computeWeekStats(weekKey);
-      const rangeStr = formatWeekDisplayLabel(currentWeekStart);
-
-      let lines = [
-        `WEEKLY GOALS SCORECARD (忍耐)`,
-        rangeStr,
-        `Score: ${stats.scoreOutOf10} / 10.0 (${stats.totalPoints} / ${stats.baseline} pts)\n`
-      ];
-
-      userGoals.forEach(g => {
-        lines.push(`• ${g.name}: ${stats.goalTotals[g.id] || 0} / ${g.target} pts`);
+        return {
+          dayName: ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"][idx],
+          shortName: DAYS[idx],
+          dateKey: dKey,
+          isWeekend,
+          completed: count,
+          total: dailyRoster.length
+        };
       });
 
-      copyToClipboard(lines.join('\n'));
-    }
-
-    function copyToClipboard(text) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => {
-          showToast('Copied to clipboard');
-        }).catch(() => {
-          fallbackCopyText(text);
+      let weeklyMasterCompleted = 0;
+      const totalWeeklyMaster = weeklyRoster.length;
+      if (state.logs[weekKey]) {
+        weeklyRoster.forEach(item => {
+          if (state.logs[weekKey][item.id]) weeklyMasterCompleted++;
         });
+      }
+
+      // Base store only includes Mon-Fri daily + weekly master chores
+      const baseEarned = weekdayCompleted + weeklyMasterCompleted;
+      const baseTotal = totalWeekdayBase + totalWeeklyMaster;
+      const basePct = baseTotal > 0 ? Math.round((baseEarned / baseTotal) * 100) : 0;
+
+      // Grade classification
+      let grade = "DISCIPLINE FORMING";
+      if (basePct >= 95) grade = "STANDOUT DISCIPLINE";
+      else if (basePct >= 80) grade = "MISSION ACCOMPLISHED";
+      else if (basePct >= 65) grade = "SOLID MOMENTUM";
+      else if (basePct >= 50) grade = "STEADY PACE";
+
+      return {
+        monday,
+        sunday: weekDays[6],
+        weekdayCompleted,
+        totalWeekdayBase,
+        weeklyMasterCompleted,
+        totalWeeklyMaster,
+        weekendBonusCompleted,
+        baseEarned,
+        baseTotal,
+        basePct,
+        grade,
+        dayBreakdown
+      };
+    }
+
+    // ----------------------------------------------------
+    // MAIN RENDER PIPELINE
+    // ----------------------------------------------------
+    function renderApp() {
+      const monday = getMondayOfOffset(state.weekOffset);
+      const weekDays = getFullWeekDays(monday);
+      const weekKey = getWeekKey(monday);
+      const sunday = weekDays[6];
+
+      const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+      const monStr = `${monthNames[monday.getMonth()]} ${monday.getDate()}`;
+      const sunStr = `${monthNames[sunday.getMonth()]} ${sunday.getDate()}, ${sunday.getFullYear()}`;
+      document.getElementById("weekRangeLabel").textContent = `WEEK OF ${monStr} - ${sunStr}`;
+
+      const statusBadge = document.getElementById("weekStatusBadge");
+      const jumpBtn = document.getElementById("jumpCurrentBtn");
+      if (state.weekOffset === 0) {
+        statusBadge.textContent = "CURRENT ACTIVE WEEK";
+        statusBadge.style.color = "var(--accent)";
+        jumpBtn.style.display = "none";
       } else {
-        fallbackCopyText(text);
+        statusBadge.textContent = state.weekOffset < 0 ? "PAST HISTORICAL WEEK" : "FUTURE PLANNED WEEK";
+        statusBadge.style.color = "var(--text-muted)";
+        jumpBtn.style.display = "inline-block";
       }
-    }
 
-    function fallbackCopyText(text) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.left = '-9999px';
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand('copy');
-        showToast('Copied to clipboard');
-      } catch (err) {
-        showToast('Failed to copy');
+      const todayStr = formatDateKey(new Date());
+
+      // Render 7 Day Tabs (Mon-Sun)
+      const tabsContainer = document.getElementById("dayTabsContainer");
+      tabsContainer.innerHTML = weekDays.map((d, idx) => {
+        const dKey = formatDateKey(d);
+        const dailyItems = getDailyRoster();
+        const doneDaily = dailyItems.filter(item => state.logs[dKey] && state.logs[dKey][item.id]).length;
+        const isToday = (todayStr === dKey);
+        const isActive = (state.activeDayIndex === idx);
+        const isWeekend = idx >= 5;
+
+        return `
+          <button class="tab-btn ${isWeekend ? 'weekend-tab' : ''} ${isActive ? 'active' : ''} ${isToday ? 'today' : ''}" onclick="selectDay(${idx})">
+            <span>${DAYS[idx]}</span>
+            <span class="tab-count">${isWeekend ? `+${doneDaily}` : `${doneDaily}/${dailyItems.length}`}</span>
+          </button>
+        `;
+      }).join("");
+
+      // Active view setup
+      const isWeekend = (state.activeDayIndex >= 5);
+      const bonusBanner = document.getElementById("bonusBanner");
+      const progressBarFill = document.getElementById("progressBarFill");
+      const activeDate = weekDays[state.activeDayIndex];
+      const activeDateKey = formatDateKey(activeDate);
+      const activeDayName = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"][state.activeDayIndex];
+
+      const dailyRoster = getDailyRoster();
+      const weeklyRoster = getWeeklyRoster();
+      const doneDailyCount = dailyRoster.filter(i => state.logs[activeDateKey] && state.logs[activeDateKey][i.id]).length;
+
+      if (isWeekend) {
+        bonusBanner.style.display = "flex";
+        progressBarFill.classList.add("bonus-fill");
+        document.getElementById("dailySectionTitle").textContent = "WEEKEND EXTRA CREDIT";
+        document.getElementById("dailySectionBadge").textContent = "DOES NOT PENALIZE STORE";
+        document.getElementById("dailySectionBadge").className = "section-badge gold";
+
+        const bonusPct = Math.round((doneDailyCount / dailyRoster.length) * 100);
+        document.getElementById("activeDayLabel").textContent = `${activeDayName} (EXTRA CREDIT BONUS)`;
+        document.getElementById("activeProgressStats").textContent = `+${doneDailyCount} BONUS PTS LOGGED (${bonusPct}%)`;
+        progressBarFill.style.width = `${bonusPct}%`;
+      } else {
+        bonusBanner.style.display = "none";
+        progressBarFill.classList.remove("bonus-fill");
+        document.getElementById("dailySectionTitle").textContent = "DAILY DISCIPLINES";
+        document.getElementById("dailySectionBadge").textContent = "RESETS EVERY DAY";
+        document.getElementById("dailySectionBadge").className = "section-badge";
+
+        const dayPct = Math.round((doneDailyCount / dailyRoster.length) * 100);
+        document.getElementById("activeDayLabel").textContent = `${activeDayName} EXECUTION`;
+        document.getElementById("activeProgressStats").textContent = `${doneDailyCount} / ${dailyRoster.length} COMPLETED (${dayPct}%)`;
+        progressBarFill.style.width = `${dayPct}%`;
       }
-      document.body.removeChild(ta);
+
+      // Render Daily List
+      const dailyList = document.getElementById("dailyList");
+      dailyList.innerHTML = dailyRoster.map(item => {
+        const isDone = Boolean(state.logs[activeDateKey] && state.logs[activeDateKey][item.id]);
+        return `
+          <div class="chore-card ${isDone ? 'done' : ''} ${isDone && isWeekend ? 'bonus-done' : ''}" onclick="toggleDailyChore('${item.id}')">
+            <div class="chore-left">
+              <div class="checkbox">
+                ${isDone ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>' : ''}
+              </div>
+              <span class="chore-title">${item.title}</span>
+            </div>
+            <span class="chore-tag">${isWeekend ? '+BONUS' : 'DAILY'}</span>
+          </div>
+        `;
+      }).join("");
+
+      // Render Weekly Master List (stays done all week)
+      const weeklyList = document.getElementById("weeklyList");
+      weeklyList.innerHTML = weeklyRoster.map(item => {
+        const isDone = Boolean(state.logs[weekKey] && state.logs[weekKey][item.id]);
+        return `
+          <div class="chore-card ${isDone ? 'done' : ''}" onclick="toggleWeeklyChore('${item.id}')">
+            <div class="chore-left">
+              <div class="checkbox">
+                ${isDone ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>' : ''}
+              </div>
+              <span class="chore-title">${item.title}</span>
+            </div>
+            <span class="chore-tag">WEEKLY</span>
+          </div>
+        `;
+      }).join("");
     }
 
-    function showToast(msg) {
-      const t = document.getElementById('toast-el');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => {
-        t.classList.remove('show');
-      }, 2500);
+    // ----------------------------------------------------
+    // IN-APP CHORE MANAGER
+    // ----------------------------------------------------
+    function setNewChoreType(type) {
+      state.newChoreType = type;
+      document.getElementById("typeDaily").classList.toggle("selected", type === "daily");
+      document.getElementById("typeWeekly").classList.toggle("selected", type === "weekly");
     }
 
-    /* =========================================================================
-       INITIALIZATION
-       ========================================================================= */
-    window.addEventListener('DOMContentLoaded', async () => {
-      await openDB();
-      initPersistentStorage();
-      await loadMasterState();
+    function addNewChore() {
+      const input = document.getElementById("newChoreTitle");
+      const title = input.value.trim().toUpperCase();
+      if (!title) return;
 
-      const savedTheme = safeStorageGet('wdt_theme', 'emerald');
-      setTheme(savedTheme);
+      const newId = (state.newChoreType === "daily" ? "d_" : "w_") + Date.now().toString(36);
+      if (state.newChoreType === "daily") {
+        if (!state.customDaily) state.customDaily = [...DEFAULT_DAILY];
+        state.customDaily.push({ id: newId, title });
+      } else {
+        if (!state.customWeekly) state.customWeekly = [...DEFAULT_WEEKLY];
+        state.customWeekly.push({ id: newId, title });
+      }
 
+      input.value = "";
+      saveState();
+      renderManageList();
       renderApp();
+    }
+
+    function deleteChore(id, type) {
+      if (type === "daily") {
+        if (!state.customDaily) state.customDaily = [...DEFAULT_DAILY];
+        state.customDaily = state.customDaily.filter(item => item.id !== id);
+      } else {
+        if (!state.customWeekly) state.customWeekly = [...DEFAULT_WEEKLY];
+        state.customWeekly = state.customWeekly.filter(item => item.id !== id);
+      }
+      saveState();
+      renderManageList();
+      renderApp();
+    }
+
+    function resetChoreDefaults() {
+      if (!confirm("RESTORE ORIGINAL DEFAULT CHORES?")) return;
+      state.customDaily = null;
+      state.customWeekly = null;
+      localStorage.removeItem("bab_roster_daily");
+      localStorage.removeItem("bab_roster_weekly");
+      saveState();
+      renderManageList();
+      renderApp();
+    }
+
+    function renderManageList() {
+      const container = document.getElementById("manageListContainer");
+      const daily = getDailyRoster();
+      const weekly = getWeeklyRoster();
+
+      let html = "";
+      daily.forEach(item => {
+        html += `
+          <div class="manage-item">
+            <div class="manage-item-info">
+              <span class="chore-tag">DAILY</span>
+              <span>${item.title}</span>
+            </div>
+            <button class="btn-del" onclick="deleteChore('${item.id}', 'daily')">✕</button>
+          </div>
+        `;
+      });
+
+      weekly.forEach(item => {
+        html += `
+          <div class="manage-item">
+            <div class="manage-item-info">
+              <span class="chore-tag">WEEKLY</span>
+              <span>${item.title}</span>
+            </div>
+            <button class="btn-del" onclick="deleteChore('${item.id}', 'weekly')">✕</button>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // ----------------------------------------------------
+    // FULL REPORT CARD MODAL & SUMMARY EXPORT
+    // ----------------------------------------------------
+    function openReportCard() {
+      const stats = getFullAuditStats();
+      const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+      const dateRangeStr = `${monthNames[stats.monday.getMonth()]} ${stats.monday.getDate()} - ${monthNames[stats.sunday.getMonth()]} ${stats.sunday.getDate()}, ${stats.sunday.getFullYear()}`;
+
+      document.getElementById("rcWeekTitle").textContent = `WEEK OF ${dateRangeStr}`;
+      document.getElementById("rcScorePct").textContent = `${stats.basePct}%`;
+      document.getElementById("rcGradeBadge").textContent = stats.grade;
+      document.getElementById("rcWeekdayTotal").textContent = `${stats.weekdayCompleted} / ${stats.totalWeekdayBase}`;
+      document.getElementById("rcWeeklyTotal").textContent = `${stats.weeklyMasterCompleted} / ${stats.totalWeeklyMaster}`;
+      document.getElementById("rcBonusTotal").textContent = `+${stats.weekendBonusCompleted} PTS`;
+
+      const tbody = document.getElementById("rcTableBody");
+      let tableHtml = "";
+
+      stats.dayBreakdown.forEach(day => {
+        const isBonus = day.isWeekend;
+        const isComplete = day.completed === day.total;
+        const hasSome = day.completed > 0;
+
+        let pillHtml = `<span class="status-pill empty">REST / INCOMPLETE</span>`;
+        if (isBonus) {
+          pillHtml = hasSome 
+            ? `<span class="status-pill bonus">+${day.completed} EXTRA CREDIT</span>` 
+            : `<span class="status-pill empty">REST DAY (NO PENALTY)</span>`;
+        } else if (isComplete) {
+          pillHtml = `<span class="status-pill done">100% COMPLETE</span>`;
+        } else if (hasSome) {
+          pillHtml = `<span class="status-pill done">${day.completed}/${day.total} LOGGED</span>`;
+        }
+
+        tableHtml += `
+          <tr class="${isBonus ? 'weekend-row' : ''}">
+            <td>${day.dayName}</td>
+            <td>${day.completed} / ${day.total}</td>
+            <td>${isBonus ? 'EXTRA CREDIT BONUS' : 'DAILY CORE'}</td>
+            <td style="text-align:right;">${pillHtml}</td>
+          </tr>
+        `;
+      });
+
+      // Weekly master chores row
+      const masterComplete = stats.weeklyMasterCompleted === stats.totalWeeklyMaster;
+      tableHtml += `
+        <tr style="border-top: 1px solid var(--border-strong);">
+          <td>WEEKLY MASTER</td>
+          <td>${stats.weeklyMasterCompleted} / ${stats.totalWeeklyMaster}</td>
+          <td>HOUSEHOLD STEWARDSHIP</td>
+          <td style="text-align:right;">
+            <span class="status-pill ${masterComplete ? 'done' : 'empty'}">
+              ${stats.weeklyMasterCompleted}/${stats.totalWeeklyMaster} DONE
+            </span>
+          </td>
+        </tr>
+      `;
+
+      tbody.innerHTML = tableHtml;
+      openModal("reportCardModal");
+    }
+
+    function copyWeeklySummary() {
+      const stats = getFullAuditStats();
+      const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+      const dateRangeStr = `${monthNames[stats.monday.getMonth()]} ${stats.monday.getDate()} - ${monthNames[stats.sunday.getMonth()]} ${stats.sunday.getDate()}, ${stats.sunday.getFullYear()}`;
+
+      let breakdownText = "";
+      stats.dayBreakdown.forEach(d => {
+        breakdownText += `• ${d.dayName}: ${d.completed}/${d.total} ${d.isWeekend ? '(BONUS)' : ''}\n`;
+      });
+
+      const text = `BE A BETTER - WEEKLY ACCOUNTABILITY REPORT\n` +
+                   `WEEK: ${dateRangeStr}\n` +
+                   `OVERALL BASE SCORE: ${stats.basePct}% (${stats.grade})\n` +
+                   `WEEKDAY DISCIPLINES: ${stats.weekdayCompleted}/${stats.totalWeekdayBase}\n` +
+                   `WEEKLY MASTER CHORES: ${stats.weeklyMasterCompleted}/${stats.totalWeeklyMaster}\n` +
+                   `WEEKEND EXTRA CREDIT BONUS: +${stats.weekendBonusCompleted} POINTS\n\n` +
+                   `DAY BREAKDOWN:\n` +
+                   breakdownText +
+                   `• WEEKLY MASTER: ${stats.weeklyMasterCompleted}/${stats.totalWeeklyMaster}\n\n` +
+                   `STEWARDSHIP FOR MY WIFE AND CHILDREN.`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("FULL REPORT CARD COPIED TO CLIPBOARD!");
+      }).catch(() => {
+        prompt("COPY YOUR REPORT CARD:", text);
+      });
+    }
+
+    function openModal(id) {
+      if (id === "colorModal") renderPaletteGrid();
+      if (id === "choreModal") renderManageList();
+      document.getElementById(id).classList.add("open");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("open");
+    }
+
+    window.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal-overlay")) {
+        e.target.classList.remove("open");
+      }
     });
+
+    loadSavedState();
+    applyAccent(state.accent);
+    renderApp();
   </script>
 </body>
 </html>
